@@ -9,7 +9,7 @@ public class CarParkingSpot extends ParkingSpot {
     }
 
     @Override
-    public boolean canParkVehicle(Vehicle vehicle) {
-        return false;
+    public boolean canParkVehicle(Vehicle vehicle) {  //only car parking is allowed
+        return EParkingSpotType.CAR.toString().equalsIgnoreCase(vehicle.getVehicleType().toString());
     }
 }
