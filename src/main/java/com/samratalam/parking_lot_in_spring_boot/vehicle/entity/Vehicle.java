@@ -6,12 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class VehicleAbstract {
+public abstract class Vehicle {
     private String licensePlate;
     private EVehicleColor color;
     private EVehicleSize size;
