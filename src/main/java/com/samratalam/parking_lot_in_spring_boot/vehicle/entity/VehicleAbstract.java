@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,5 +16,5 @@ public abstract class VehicleAbstract {
     private EVehicleColor color;
     private EVehicleSize size;
 
-    public abstract Double calculateParkingFee();
+    public abstract Double calculateParkingFee(int totalHrs);
 }
