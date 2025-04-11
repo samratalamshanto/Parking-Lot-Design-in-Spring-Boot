@@ -10,6 +10,6 @@ public class BikeParkingSpot extends ParkingSpot {
 
     @Override
     public boolean canParkVehicle(Vehicle vehicle) { //only bike parking is allowed
-        return EParkingSpotType.BIKE.toString().equalsIgnoreCase(vehicle.getVehicleType().toString());
+        return EParkingSpotType.BIKE.toString().equalsIgnoreCase(vehicle.getVehicleType());
     }
 }
