@@ -13,7 +13,7 @@ import java.util.UUID;
 
 
 @Data
-@NoArgsConstructor  // Needed by Spring Data
+@NoArgsConstructor
 @AllArgsConstructor
 @Table("vehicle")
 public abstract class Vehicle {
