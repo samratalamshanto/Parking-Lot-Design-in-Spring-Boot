@@ -7,12 +7,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
 public abstract class Vehicle {
-    private String licensePlate;
-    private EVehicleColor color;
-    private EVehicleSize size;
+    private final String licensePlate;
+    private final EVehicleColor color;
+    private final EVehicleSize size;
 
     public abstract Double calculateParkingFee(int totalHrs);
+    public Vehicle(String licensePlate, EVehicleColor color, EVehicleSize size) {
+        this.licensePlate = licensePlate;
+        this.color = color;
+        this.size = size;
+    }
 }
