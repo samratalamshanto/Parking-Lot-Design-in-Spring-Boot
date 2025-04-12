@@ -16,7 +16,6 @@ buildNumber.properties
 
 ### STS ###
 .apt_generated
-.classpath
 .factorypath
 # Eclipse m2e generated files
 # Eclipse Core
