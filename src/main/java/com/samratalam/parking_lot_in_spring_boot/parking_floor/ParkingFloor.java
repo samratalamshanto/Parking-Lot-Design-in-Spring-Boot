@@ -7,6 +7,7 @@ import com.samratalam.parking_lot_in_spring_boot.vehicle.entity.Vehicle;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +16,8 @@ import java.util.List;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class ParkingFloor {
-    private final ParkingSpotService parkingSpotService;
+    @Autowired
+    private ParkingSpotService parkingSpotService;
     private List<ParkingSpot> parkingSpotList;
     private HashMap<String, ParkingSpot> parkingSpotMap;
     private int floorNumber;
