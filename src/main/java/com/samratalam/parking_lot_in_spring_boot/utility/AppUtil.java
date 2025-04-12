@@ -5,6 +5,8 @@ import com.samratalam.parking_lot_in_spring_boot.base.dto.CommonResponse;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
+import java.util.UUID;
 
 public final class AppUtil {
 
@@ -34,5 +36,13 @@ public final class AppUtil {
 
     public static CommonResponse serverErrorResponse(String errorMsg) {
         return new CommonResponse(500, false, errorMsg, null);
+    }
+
+    public static synchronized UUID getUUID() {
+        return UUID.randomUUID();
+    }
+
+    public static int getTotalHrs(LocalDateTime startTime) {
+        return (int) AppUtil.getCurrentDateTime().until(startTime, ChronoUnit.HOURS);
     }
 }

@@ -2,6 +2,7 @@ package com.samratalam.parking_lot_in_spring_boot.parking_spot.service;
 
 import com.samratalam.parking_lot_in_spring_boot.mapper.VehicleMapper;
 import com.samratalam.parking_lot_in_spring_boot.parking_spot.entity.ParkingSpot;
+import com.samratalam.parking_lot_in_spring_boot.parking_spot.repository.ParkingSpotRepo;
 import com.samratalam.parking_lot_in_spring_boot.vehicle.entity.Vehicle;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class ParkingSpotServiceImpl implements ParkingSpotService {
+    private final ParkingSpotRepo parkingSpotRepo;
 
     @Override
     public void vacantParkingSpot(ParkingSpot parkingSpot) {
@@ -33,5 +35,10 @@ public class ParkingSpotServiceImpl implements ParkingSpotService {
         parkingSpot.setVehicleUdt(VehicleMapper.mapToVehicleUDT(vehicle));
         parkingSpot.setOccupied(false);
         return parkingSpot.getParkingSpotNumber();
+    }
+
+    @Override
+    public void saveParkingSpot(ParkingSpot parkingSpot) {
+        parkingSpotRepo.save(parkingSpot);
     }
 }

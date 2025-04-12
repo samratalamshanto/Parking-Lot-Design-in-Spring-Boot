@@ -8,16 +8,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
 
-@Data
-@AllArgsConstructor
+@Service
 @RequiredArgsConstructor
 public class ParkingFloor {
-    @Autowired
-    private ParkingSpotService parkingSpotService;
+    private final ParkingSpotService parkingSpotService;
     private List<ParkingSpot> parkingSpotList;
     private HashMap<String, ParkingSpot> parkingSpotMap;
     private int floorNumber;

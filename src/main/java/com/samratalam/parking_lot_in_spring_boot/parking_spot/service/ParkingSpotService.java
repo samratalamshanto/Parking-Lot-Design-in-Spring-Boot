@@ -7,4 +7,6 @@ public interface ParkingSpotService {
     void vacantParkingSpot(ParkingSpot parkingSpot);
 
     int parkVehicle(Vehicle vehicle, ParkingSpot parkingSpot);
+
+    void saveParkingSpot(ParkingSpot parkingSpot);
 }

@@ -28,44 +28,12 @@ public abstract class ParkingSpot {
         this.parkingSpotType = parkingSpot.name();
     }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public int getParkingSpotNumber() {
-        return parkingSpotNumber;
-    }
-
-    public void setParkingSpotNumber(int parkingSpotNumber) {
-        this.parkingSpotNumber = parkingSpotNumber;
-    }
-
-    public String getParkingSpotType() {
-        return parkingSpotType;
-    }
-
-    public void setParkingSpotType(String parkingSpotType) {
-        this.parkingSpotType = parkingSpotType;
-    }
-
     public boolean isOccupied() {
         return isOccupied;
     }
 
     public void setOccupied(boolean occupied) {
         isOccupied = occupied;
-    }
-
-    public VehicleUDT getVehicleUdt() {
-        return vehicleUdt;
-    }
-
-    public void setVehicleUdt(VehicleUDT vehicleUdt) {
-        this.vehicleUdt = vehicleUdt;
     }
 
     public abstract boolean canParkVehicle(Vehicle vehicle);
