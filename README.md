@@ -14,3 +14,9 @@ Cassandra Commands: connect it to the database using cqlsh.
 4. CREATE KEYSPACE parking_lot_keyspaces
 WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
 5. desc keyspaces;
+
+
+Problem Faced:
+1. Lombok
+2. datacenter of cassandara
+3. Abstract class @RequestBody

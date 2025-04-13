@@ -1,13 +1,13 @@
 package com.samratalam.parking_lot_in_spring_boot.parking_floor;
 
 import com.samratalam.parking_lot_in_spring_boot.mapper.VehicleMapper;
+import com.samratalam.parking_lot_in_spring_boot.parking_spot.entity.BikeParkingSpot;
+import com.samratalam.parking_lot_in_spring_boot.parking_spot.entity.CarParkingSpot;
 import com.samratalam.parking_lot_in_spring_boot.parking_spot.entity.ParkingSpot;
+import com.samratalam.parking_lot_in_spring_boot.parking_spot.entity.TruckParkingSpot;
 import com.samratalam.parking_lot_in_spring_boot.parking_spot.service.ParkingSpotService;
 import com.samratalam.parking_lot_in_spring_boot.vehicle.entity.Vehicle;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

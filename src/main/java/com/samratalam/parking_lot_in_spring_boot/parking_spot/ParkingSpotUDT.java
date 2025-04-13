@@ -15,7 +15,7 @@ import java.util.UUID;
 public class ParkingSpotUDT {
     private UUID id;
     private int parkingSpotNumber;
-    private int parkingFloor;
+//    private int parkingFloor;
     private String parkingSpotType;
     private boolean isOccupied;
     private VehicleUDT vehicleUdt;

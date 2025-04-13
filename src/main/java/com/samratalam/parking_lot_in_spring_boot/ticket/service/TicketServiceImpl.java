@@ -10,17 +10,20 @@ import com.samratalam.parking_lot_in_spring_boot.utility.AppUtil;
 import com.samratalam.parking_lot_in_spring_boot.vehicle.entity.Vehicle;
 import com.samratalam.parking_lot_in_spring_boot.vehicle.service.VehicleService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class TicketServiceImpl implements TicketService {
     private final TicketRepository ticketRepository;
     private final ParkingFloor parkingFloor;
     private final ParkingSpotService parkingSpotService;
     private final VehicleService vehicleService;
+
 
     @Override
     public CommonResponse createTicket(Vehicle vehicle) {
@@ -35,11 +38,11 @@ public class TicketServiceImpl implements TicketService {
 
             Ticket ticket = new Ticket(vehicle, parkingSpot);
             ticket.setId(AppUtil.getUUID());
-            ticketRepository.save(ticket);
+            ticket = ticketRepository.save(ticket);
 
             return AppUtil.createdResponse("Successfully created ticket.", ticket);
         } catch (Exception e) {
-
+            log.error(e.getMessage());
         }
         return null;
     }
