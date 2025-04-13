@@ -20,17 +20,14 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TicketServiceImpl implements TicketService {
     private final TicketRepository ticketRepository;
-    private final ParkingFloor parkingFloor;
     private final ParkingSpotService parkingSpotService;
     private final VehicleService vehicleService;
 
 
     @Override
     public CommonResponse createTicket(Vehicle vehicle) {
-
         try {
-            ParkingSpot parkingSpot = parkingFloor.parkVehicle(vehicle);
-            parkingSpot.setId(AppUtil.getUUID());
+            ParkingSpot parkingSpot = parkingSpotService.parkVehicle(vehicle);
             parkingSpotService.saveParkingSpot(parkingSpot);
 
             vehicle.setId(AppUtil.getUUID());

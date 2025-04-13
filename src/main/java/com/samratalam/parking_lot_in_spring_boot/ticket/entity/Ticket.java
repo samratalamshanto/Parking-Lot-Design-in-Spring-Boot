@@ -28,11 +28,14 @@ public class Ticket {
     private LocalDateTime parkingStartTime;
     private LocalDateTime parkingEndTime;
     private Double ratePerHrs;
+    private LocalDateTime createdTime;
+    private LocalDateTime updatedTime;
 
     public Ticket(Vehicle vehicle, ParkingSpot parkingSpot) {
         this.vehicle = VehicleMapper.mapToVehicleUDT(vehicle);
         this.parkingSpot = ParkingSpotMapper.mapToParkingSpotUDT(parkingSpot);
         this.parkingStartTime = AppUtil.getCurrentDateTime();
         this.ratePerHrs = vehicle.getRatePerHr();
+        this.createdTime = AppUtil.getCurrentDateTime();
     }
 }

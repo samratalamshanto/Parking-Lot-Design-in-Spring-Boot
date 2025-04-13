@@ -9,4 +9,12 @@ public interface ParkingSpotService {
     int parkVehicle(Vehicle vehicle, ParkingSpot parkingSpot);
 
     void saveParkingSpot(ParkingSpot parkingSpot);
+
+    ParkingSpot findAvailableSpot(String parkingSpotName);
+
+    ParkingSpot parkVehicle(Vehicle vehicle);
+
+    void vacantParkingSpot(ParkingSpot parkingSpot, Vehicle vehicle);
+
+    ParkingSpot findParkingSpotByVehiclePlateNumber(String vehiclePlateNumber);
 }
