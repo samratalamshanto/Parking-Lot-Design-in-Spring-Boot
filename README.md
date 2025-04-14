@@ -1,6 +1,11 @@
 # Parking-Lot-Design-in-Spring-Boot
 
-**Key Points:**
+**High-Level Diagram**
+
+![parking sport diagram](https://github.com/user-attachments/assets/c4802f68-c570-4e94-8d80-4617879169aa)
+
+
+**Key Points**
 
 1. Cassandra's Lightweight Transactions (LWT) used to avoid race conditions while booking a parking slot.
 2. Use cassandra DB by pulling docker image  
@@ -15,7 +20,7 @@
 
 1. docker-compose up -d
 2. docker exec -it cassandra-container /bin/bash
-3. nodetool status (for getting datacenter name)
+3. nodetool status (for getting data center name)
 3. cqlsh
 4. CREATE KEYSPACE parking_lot_keyspaces
    WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
@@ -66,8 +71,8 @@
 ```
 
 
-**Problem Faced:**
+**Problem Faced**
 
 1. Lombok Version
-2. datacenter of cassandara
+2. Datacenter of cassandara
 3. Abstract class @RequestBody and Repository mapping
